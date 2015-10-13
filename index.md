@@ -5,6 +5,12 @@ edit_page: false
 
 **{{ site.data.organizations | size }}** Organizations in the [Connector](http://bluebuttonconnector.healthit.gov).
 
+<div>
+  <div class="status green"></div> = Available
+  <br>
+  <div class="status red"></div> = Unavailable
+</div>
+
 # View
 
 <div class="status-boxes">
