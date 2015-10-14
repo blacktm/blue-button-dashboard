@@ -9,6 +9,10 @@
 
 /* Custom Styles */
 
+$light:  #cde472;
+$medium: #7cbe52;
+$dark:   #1a571b;
+
 body {
   font-family: 'Open Sans', sans-serif;
 }
@@ -19,6 +23,10 @@ h1, h2, h3, h4 {
 
 code {
   font-family: 'Source Code Pro', monospace;
+}
+
+.legend {
+  margin-bottom: 1.5em;
 }
 
 .status-boxes {
@@ -39,6 +47,10 @@ code {
   }
 }
 
+.gray {
+  background: #d9d9d9;
+}
+
 .green {
   background: $green;
 }
@@ -47,6 +59,17 @@ code {
   background: $red;
 }
 
+.light {
+  background: $light;
+}
+
+.medium {
+  background: $medium;
+}
+
+.dark {
+  background: $dark;
+}
 
 /**
  * Tooltip Styles

@@ -3,39 +3,66 @@ title: Blue Button Dashboard
 edit_page: false
 ---
 
-**{{ site.data.organizations | size }}** Organizations in the [Connector](http://bluebuttonconnector.healthit.gov).
+Data on **{{ site.data.organizations | size }}** organizations compiled from the [Blue Button Connector](http://bluebuttonconnector.healthit.gov) detailing progress toward View, Download, and Transmit defined in [Meaningful Use Stage 2](http://www.healthit.gov/buzz-blog/meaningful-use/view-download-transmit-facts/).
 
-<div>
+Jump to: [View](#view), [Download](#download), [Transmit](#transmit), [Composite](#composite), [All Data](#all-data)
+
+<div class="legend">
   <div class="status green"></div> = Available
   <br>
   <div class="status red"></div> = Unavailable
 </div>
 
+<a name="view"></a>
 # View
 
 <div class="status-boxes">
   {% for org in site.data.organizations %}
-  <div class="status {% if org.view %}green{% else %}red{% endif %}" data-tooltip="{{ org.organization }}"></div>
+  <div class="status {% if org.view %}green{% else %}red{% endif %}" data-tooltip="{{ org.organization }}" onclick=""></div>
   
   {% endfor %}
 </div>
 
+<a name="download"></a>
 # Download
 
 <div class="status-boxes">
   {% for org in site.data.organizations %}
-  <div class="status {% if org.download %}green{% else %}red{% endif %}" data-tooltip="{{ org.organization }}"></div>
+  <div class="status {% if org.download %}green{% else %}red{% endif %}" data-tooltip="{{ org.organization }}" onclick=""></div>
   {% endfor %}
 </div>
 
+<a name="transmit"></a>
 # Transmit
 
 <div class="status-boxes">
   {% for org in site.data.organizations %}
-  <div class="status {% if org.transmit %}green{% else %}red{% endif %}" data-tooltip="{{ org.organization }}"></div>
+  <div class="status {% if org.transmit %}green{% else %}red{% endif %}" data-tooltip="{{ org.organization }}" onclick=""></div>
   {% endfor %}
 </div>
 
+<a name="composite"></a>
+# Composite
+
+<div class="legend">
+  <div class="status gray"></div> = None
+  <br>
+  <div class="status light"></div> = View
+  <br>
+  <div class="status medium"></div> = View, Download
+  <br>
+  <div class="status dark"></div> = View, Download, and Transmit
+</div>
+
+<div class="status-boxes">
+  {% for org in site.data.organizations %}
+  
+  <div class="status {% if org.transmit %}dark{% elsif org.download %}medium{% elsif org.view %}light{% else %}gray{% endif %}" data-tooltip="{{ org.organization }}" onclick=""></div>
+  
+  {% endfor %}
+</div>
+
+<a name="all-data"></a>
 # All Data
 
 <table>
