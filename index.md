@@ -3,7 +3,7 @@ title: Blue Button Dashboard
 edit_page: false
 ---
 
-Data on **{{ site.data.organizations | size }}** organizations compiled from the [Blue Button Connector](http://bluebuttonconnector.healthit.gov) detailing progress toward View, Download, and Transmit defined in [Meaningful Use Stage 2](http://www.healthit.gov/buzz-blog/meaningful-use/view-download-transmit-facts/).
+Data on **{{ site.data.organizations | size }}** organizations compiled from the [Blue Button Connector](http://bluebuttonconnector.healthit.gov) detailing progress toward View, Download, and Transmit defined in [Meaningful Use Stage 2](http://www.healthit.gov/buzz-blog/meaningful-use/view-download-transmit-facts/). Hover or tap on a square to view the organization name.
 
 Jump to: [View](#view), [Download](#download), [Transmit](#transmit), [Composite](#composite), [All Data](#all-data)
 
