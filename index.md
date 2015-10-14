@@ -3,7 +3,7 @@ title: Blue Button Dashboard
 edit_page: false
 ---
 
-Data on **{{ site.data.organizations | size }}** organizations compiled from the [Blue Button Connector](http://bluebuttonconnector.healthit.gov) detailing progress toward View, Download, and Transmit defined in [Meaningful Use Stage 2](http://www.healthit.gov/buzz-blog/meaningful-use/view-download-transmit-facts/). Hover or tap on a square to view the organization name.
+Data on **{{ site.data.organizations | size }}** organizations compiled from the [Blue Button Connector](http://bluebuttonconnector.healthit.gov) detailing progress toward allowing patients and consumers to view, download, and transmit their health data, defined in [Meaningful Use Stage 2](http://www.healthit.gov/buzz-blog/meaningful-use/view-download-transmit-facts/). Hover or tap on a square to view the organization name.
 
 Jump to: [View](#view), [Download](#download), [Transmit](#transmit), [Composite](#composite), [All Data](#all-data)
 
@@ -16,6 +16,15 @@ Jump to: [View](#view), [Download](#download), [Transmit](#transmit), [Composite
 <a name="view"></a>
 # View
 
+{% assign num_orgs = 0 %}
+{% for org in site.data.organizations %}
+  {% if org.view == true %}
+    {% assign num_orgs = num_orgs | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
+**{{ num_orgs }}** organizations allow viewing of health data online.
+
 <div class="status-boxes">
   {% for org in site.data.organizations %}
   <div class="status {% if org.view %}green{% else %}red{% endif %}" data-tooltip="{{ org.organization }}" onclick=""></div>
@@ -26,6 +35,15 @@ Jump to: [View](#view), [Download](#download), [Transmit](#transmit), [Composite
 <a name="download"></a>
 # Download
 
+{% assign num_orgs = 0 %}
+{% for org in site.data.organizations %}
+  {% if org.download == true %}
+    {% assign num_orgs = num_orgs | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
+**{{ num_orgs }}** organizations allow downloading of health data.
+
 <div class="status-boxes">
   {% for org in site.data.organizations %}
   <div class="status {% if org.download %}green{% else %}red{% endif %}" data-tooltip="{{ org.organization }}" onclick=""></div>
@@ -34,6 +52,15 @@ Jump to: [View](#view), [Download](#download), [Transmit](#transmit), [Composite
 
 <a name="transmit"></a>
 # Transmit
+
+{% assign num_orgs = 0 %}
+{% for org in site.data.organizations %}
+  {% if org.transmit == true %}
+    {% assign num_orgs = num_orgs | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
+**{{ num_orgs }}** organizations allow transmission of health data.
 
 <div class="status-boxes">
   {% for org in site.data.organizations %}
