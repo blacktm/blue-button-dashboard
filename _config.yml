@@ -2,8 +2,8 @@
 title: Blue Button Dashboard
 description: > # this means to ignore newlines until "baseurl:"
   Blue Button Dashboard
-baseurl: "/dashboard"
-url: "http://bluebuttontoolkit.healthit.gov"
+baseurl: "/blue-button-dashboard"
+url: "http://blacktm.com"
 
 # Header
 header:
@@ -18,8 +18,8 @@ edit_page:
   # enabled: true  # Enabled by default for pages and posts
   text: "Edit this page »"
   github:
-    author: blue-button
-    repo:   dashboard
+    author: blacktm
+    repo:   blue-button-dashboard
     branch: gh-pages
 
 # Build settings
